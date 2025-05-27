@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --color-text: #fff;
+  --color-bg: #fff;
+  --color-overlay: #000;
+  --color-overlay-text: #fff;
+  --grid-padding: 2rem;
+  --grid-gap: 1rem;
+  --transition-timing: cubic-bezier(0.65, 0.05, 0.36, 1);
+  --transition-duration: 640ms;
+  --font-primary: "Space Mono";
+  --font-secondary: "TheGoodMonolith", monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: var(--color-text);
+  font-family: var(--font-primary);
+}
+
+#text {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+}
+
+#profile-text {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #ffffff; /* 文字色を変更したい場合はここで */
+  padding: 10px;
+  border-radius: 8px;
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
