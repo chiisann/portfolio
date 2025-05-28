@@ -96,10 +96,37 @@ function init() {
     delay: 1.5,
     scrambleText: {
       text: "Welcome to chiisann's Portfolio",
-      rightToLeft: false,
+      rightToLeft: true,
       chars: "lowercase",
     },
   });
+
+  gsap.registerPlugin(SplitText);
+
+  console.clear();
+
+  document.fonts.ready.then(() => {
+    gsap.set(".split", { opacity: 1 });
+
+    let split;
+    SplitText.create(".split", {
+      type: "words,lines",
+      linesClass: "line",
+      autoSplit: true,
+      mask: "lines",
+      onSplit: (self) => {
+        split = gsap.from(self.lines, {
+          duration: 0.6,
+          yPercent: 100,
+          opacity: 0,
+          stagger: 0.1,
+          ease: "expo.out",
+        });
+        return split;
+      },
+    });
+  });
+
   // 毎フレーム時に実行されるループイベント
   function tick() {
     onResize();
