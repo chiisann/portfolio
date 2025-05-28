@@ -101,18 +101,18 @@ function init() {
   }
 }
 
-// use a script tag or an external JS file
-document.addEventListener("DOMContentLoaded", (event) => {
-  gsap.registerPlugin(ScrambleTextPlugin);
-  // gsap code here!
-  // GASP animation
-  gsap.to("#text", {
-    duration: 5,
-    delay: 1.5,
-    scrambleText: {
-      text: "Welcome to chiisann's Portfolio",
-      rightToLeft: true,
-      chars: "lowercase",
-    },
-  });
-});
+// // use a script tag or an external JS file
+// document.addEventListener("DOMContentLoaded", (event) => {
+//   gsap.registerPlugin(ScrambleTextPlugin);
+//   // gsap code here!
+//   // GASP animation
+//   gsap.to("#text", {
+//     duration: 5,
+//     delay: 1.5,
+//     scrambleText: {
+//       text: "Welcome to chiisann's Portfolio",
+//       rightToLeft: true,
+//       chars: "lowercase",
+//     },
+//   });
+// });
