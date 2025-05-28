@@ -72,61 +72,6 @@ function init() {
 
   tick();
 
-  //   Cylinders();
-  //   function Cylinders() {
-  //     var colors = [0xff596a, 0x99c5c0, 0xfcd999];
-  //     var geometry = new THREE.SphereGeometry(0.2, 0.2, 0.5, 32);
-  //     for (var i = 0; i < 50; i++) {
-  //       var material = new THREE.MeshBasicMaterial({
-  //         color: Number(colors[Math.floor(Math.random() * 3)]),
-  //       });
-  //       var mesh = new THREE.Mesh(geometry, material);
-  //       mesh.position.set(
-  //         30 * (Math.random() - 0.5),
-  //         30 * (Math.random() - 0.1),
-  //         30 * (Math.random() - 0.5)
-  //       );
-  //       scene.add(mesh);
-  //     }
-  //   }
-
-  // GASP animation
-  gsap.to("#text", {
-    duration: 5,
-    delay: 1.5,
-    scrambleText: {
-      text: "Welcome to chiisann's Portfolio",
-      rightToLeft: true,
-      chars: "lowercase",
-    },
-  });
-
-  gsap.registerPlugin(SplitText);
-
-  console.clear();
-
-  document.fonts.ready.then(() => {
-    gsap.set(".split", { opacity: 1 });
-
-    let split;
-    SplitText.create(".split", {
-      type: "words,lines",
-      linesClass: "line",
-      autoSplit: true,
-      mask: "lines",
-      onSplit: (self) => {
-        split = gsap.from(self.lines, {
-          duration: 0.6,
-          yPercent: 100,
-          opacity: 0,
-          stagger: 0.1,
-          ease: "expo.out",
-        });
-        return split;
-      },
-    });
-  });
-
   // 毎フレーム時に実行されるループイベント
   function tick() {
     onResize();
@@ -155,3 +100,19 @@ function init() {
     requestAnimationFrame(tick);
   }
 }
+
+// use a script tag or an external JS file
+document.addEventListener("DOMContentLoaded", (event) => {
+  gsap.registerPlugin(ScrambleTextPlugin);
+  // gsap code here!
+  // GASP animation
+  gsap.to("#text", {
+    duration: 5,
+    delay: 1.5,
+    scrambleText: {
+      text: "Welcome to chiisann's Portfolio",
+      rightToLeft: true,
+      chars: "lowercase",
+    },
+  });
+});
