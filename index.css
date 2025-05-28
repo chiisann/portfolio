@@ -29,6 +29,14 @@ body {
   font-size: 1rem;
 }
 
+#text-hi {
+  position: absolute;
+  bottom: 60px;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+}
+
 .profile {
   position: absolute;
   top: 20px;
@@ -62,4 +70,16 @@ body {
 
 #social-icons a:hover img {
   transform: scale(1.2);
+}
+
+#qr-code {
+  position: absolute;
+  top: 60px; /* social-iconsの下に少し余白を空ける */
+  right: 20px;
+  width: 100px;
+}
+
+#qr-code img {
+  width: 100%;
+  filter: brightness(0) invert(1); /* 白色風に変換 */
 }
